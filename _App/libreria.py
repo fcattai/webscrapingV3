@@ -187,7 +187,6 @@ def process(data):
     e2 = tbl.contenuto.values in y.contenuto.values
     e3 = tbl.link.values in y.link.values
         
-    #esito = tbl.to_string() == y.to_string()
     esito = all([e1, e2, e3])
     
     # =============================================================================
