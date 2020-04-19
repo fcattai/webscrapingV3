@@ -113,7 +113,8 @@ def sendHTMLmail(data, esito):
     
 
     # carico html da file template
-    t = open("_App/_mailTemplate.html", "r")
+    tPath = data['appPath'] + '/_App/_mailTemplate.html'
+    t = open(tPath, "r")
     html = t.read()
     t.close()
 
