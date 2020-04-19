@@ -180,7 +180,15 @@ def process(data):
     # =============================================================================
     # confronto
     # =============================================================================
-    esito = tbl.to_string() == y.to_string()
+    tbl.sort_values('contenuto', inplace = True)
+    y.sort_values('contenuto', inplace = True)
+    
+    e1 = tbl.titolo.values in y.titolo.values
+    e2 = tbl.contenuto.values in y.contenuto.values
+    e3 = tbl.link.values in y.link.values
+        
+    #esito = tbl.to_string() == y.to_string()
+    esito = all([e1, e2, e3])
     
     # =============================================================================
     # output
